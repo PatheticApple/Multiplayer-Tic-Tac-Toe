@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, createContext } from "react";
 import App, { AppContext } from "../App";
 import { Channel } from "stream-chat-react";
 import Game from "./Game";
 
+export const ChannelContext = createContext();
 
 function JoinGame() {
     const [rivalUsername, setRivalUsername] = useState("");
@@ -32,9 +33,9 @@ function JoinGame() {
         <>
             {channel ?
                 (
-                    // <Channel channel={channel}>
+                    <ChannelContext.Provider value={{channel}}>
                         <Game channel={channel}/>
-                    // </Channel>
+                    </ChannelContext.Provider>
                     
                 )
                 :
