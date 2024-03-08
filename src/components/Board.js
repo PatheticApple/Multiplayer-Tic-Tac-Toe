@@ -49,7 +49,7 @@ function Board({result, setResult}) {
             });
 
             if (foundWinningPattern) {
-                alert("Winner is " + firstPlayer);
+                // alert("Winner is " + firstPlayer);
                 setResult({winner: firstPlayer, state: "won"})
             }
         })
@@ -64,7 +64,7 @@ function Board({result, setResult}) {
         });
 
         if (filled) {
-            alert("Game tied");
+            // alert("Game tied");
             setResult({winner: "none", state: "tie"});
         }
     }
