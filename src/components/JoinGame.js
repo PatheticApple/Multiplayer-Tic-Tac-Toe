@@ -34,7 +34,7 @@ function JoinGame() {
             {channel ?
                 (
                     <ChannelContext.Provider value={{channel}}>
-                        <Game channel={channel}/>
+                        <Game channel={channel} setChannel={setChannel}/>
                     </ChannelContext.Provider>
                     
                 )
